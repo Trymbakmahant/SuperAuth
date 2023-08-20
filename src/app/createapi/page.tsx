@@ -1,5 +1,4 @@
 "use client";
-import { WagmiConfig } from "wagmi";
 import React from "react";
 import SuperfluidWidget, { WalletManager } from "@superfluid-finance/widget";
 //@ts-ignore
