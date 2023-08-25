@@ -7,6 +7,7 @@ import { useMemo, useState, useEffect } from "react";
 
 export default function MyComponent() {
   const [text, settext] = useState("hergo");
+
   const data: any = {
     paymentDetails: {
       paymentOptions: [
