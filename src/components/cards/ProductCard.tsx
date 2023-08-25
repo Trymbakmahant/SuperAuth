@@ -7,7 +7,7 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Collapse from "@mui/material/Collapse";
-import Avatar from "@mui/material/Avatar";
+import Avatar from "poc-avatar-kit";
 import IconButton, { IconButtonProps } from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { red } from "@mui/material/colors";
@@ -31,7 +31,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
   }),
 }));
 
-export default function RecipeReviewCard() {
+export default function RecipeReviewCard({ image }: { image: string }) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -42,9 +42,7 @@ export default function RecipeReviewCard() {
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
-          </Avatar>
+          <Avatar string="hlo" size={40} emojiType="3d" borderRadius={50} />
         }
         action={
           <IconButton aria-label="settings">
@@ -54,12 +52,7 @@ export default function RecipeReviewCard() {
         title="Shrimp and Chorizo Paella"
         subheader="September 14, 2016"
       />
-      <CardMedia
-        component="img"
-        height="194"
-        image="/static/images/cards/paella.jpg"
-        alt="Paella dish"
-      />
+      <CardMedia component="img" height="194" image={image} alt="Paella dish" />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
           This impressive paella is a perfect party dish and a fun meal to cook
@@ -90,7 +83,7 @@ export default function RecipeReviewCard() {
             Heat 1/2 cup of the broth in a pot until simmering, add saffron and
             set aside for 10 minutes.
           </Typography>
-          <Typography paragraph>
+          {/* <Typography paragraph>
             Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet
             over medium-high heat. Add chicken, shrimp and chorizo, and cook,
             stirring occasionally until lightly browned, 6 to 8 minutes.
@@ -107,7 +100,7 @@ export default function RecipeReviewCard() {
             shrimp and mussels, tucking them down into the rice, and cook again
             without stirring, until mussels have opened and rice is just tender,
             5 to 7 minutes more. (Discard any mussels that don&apos;t open.)
-          </Typography>
+          </Typography> */}
           <Typography>
             Set aside off of the heat to let rest for 10 minutes, and then
             serve.

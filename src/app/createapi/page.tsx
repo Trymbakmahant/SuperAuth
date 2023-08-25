@@ -3,9 +3,10 @@ import React from "react";
 import SuperfluidWidget, { WalletManager } from "@superfluid-finance/widget";
 //@ts-ignore
 import superTokenList from "@superfluid-finance/tokenlist";
-import { useMemo } from "react";
+import { useMemo, useState, useEffect } from "react";
 
 export default function MyComponent() {
+  const [text, settext] = useState("hergo");
   const data: any = {
     paymentDetails: {
       paymentOptions: [
@@ -43,6 +44,14 @@ export default function MyComponent() {
           <button onClick={() => openModal()}>Open Superfluid Widget</button>
         )}
       </SuperfluidWidget>
+
+      <input
+        type="text"
+        onChange={(e) => {
+          settext(e.target.value);
+        }}
+      />
+      {text}
     </div>
   );
 }
